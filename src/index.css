@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Neue Montreal", system-ui, sans-serif;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+    @apply block w-full border border-gray-300 rounded-lg shadow-sm focus:border-primary focus:ring-primary focus:ring-2 focus:ring-offset-0;
+  }
+}
+
+@layer components {
+  .btn-base {
+    @apply tracking-wider transition-all duration-300 transform hover:-translate-y-0.5
+    hover:shadow-lg active:translate-y-0 active:shadow-md inline-flex items-center justify-center uppercase;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-primary text-black px-8 py-3 hover:bg-white hover:text-primary;
+    clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, calc(92% - 12px) 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  
+ .btn-accent {
+   @apply btn-base bg-accent text-black px-6 py-3 rounded-full hover:bg-white hover:text-accent;
+ }
+
+  .btn-purple {
+    @apply btn-base bg-purple text-black px-6 py-3 rounded-full hover:bg-white hover:text-purple;
+  }
+
+  .btn-orange {
+    @apply btn-base bg-orange text-black px-6 py-3 rounded-full hover:bg-white hover:text-orange;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-white text-gray-900 px-6 py-3 rounded-full border border-gray-200
+    hover:border-primary hover:text-primary;
+  }
+}
+
+body {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+/* Date Picker Styles */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #FF2D55;
+  --rdp-background-color: #FFE4E9;
+  margin: 0;
+  color: #111827;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: #e5e7eb;
+}
+
+.rdp-day_today:not(.rdp-day_outside) {
+  font-weight: bold;
+  color: #FF2D55;
+}
+
+.rdp-day_selected:not([disabled]) { 
+  background-color: #FF2D55;
+  color: white;
+}
+
+.rdp-day_selected:hover:not([disabled]) {
+  background-color: #FF2D55;
+  opacity: 0.8;
+}
+
+.rdp-day:hover:not([disabled]) {
+  background-color: #e5e7eb;
+}
